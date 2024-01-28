@@ -6,9 +6,9 @@ export const usePokemonStore = defineStore('pokemon', {
         data: []
     },
     actions: {
-        async getPokemon(){
-            await axios.get('/493/').then((resp) => {
-                this.data = resp;
+        async getAllPokemon(){
+            await axios.get('/pokemon').then((resp) => {
+                this.data = resp.data;
             }).catch((e) => {
                 console.log(e);
             });

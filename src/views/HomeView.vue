@@ -4,13 +4,13 @@ import {usePokemonStore} from '../stores/pokemon';
 
 const pokemonStore = usePokemonStore();
 onMounted(() => {
-  pokemonStore.getPokemon();
+  pokemonStore.getAllPokemon();
 });
 
 </script>
 
 <template>
   <main>
-    gg<p>{{ pokemonStore.data }}</p>
+    <pre>{{ pokemonStore.data }}</pre>
   </main>
 </template>
