@@ -1,6 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main{
+  box-sizing: border-box;
+  background: url("/public/images/banner2.jpg");
+  background-size: initial;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-color: #fff;
+
+}
 /*@import './base.css';
 
 #app {
