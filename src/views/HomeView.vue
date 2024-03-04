@@ -27,7 +27,7 @@ onMounted(() => {
         >
         <div 
           v-else 
-          class="h-44 w-full rounded-md flex items-center justify-center border border-slate-500" 
+          class="h-44 w-full rounded-md flex items-center justify-center border border-slate-500 animate__animated animate__flipInY" 
           @click="pokemonStore.activeCard(false)"
           >
             {{ poke.name }}
