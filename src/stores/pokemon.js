@@ -5,12 +5,13 @@ export const usePokemonStore = defineStore('pokemon', {
     state: () => ({
         data: [],
         active: false,
+        id: Math.floor(Math.random() * 1000) + 1,
+        limit: 1000,
     }),
     actions: {
         async getAllPokemon(){
-            await axios.get('/pokemon?limit=10').then((resp) => {
+            await axios.get('/pokemon?limit='+this.limit).then((resp) => {
                 this.data = resp.data.results;
-                console.log(this.data);
             }).catch((e) => {
                 console.log(e);
             });
@@ -18,6 +19,9 @@ export const usePokemonStore = defineStore('pokemon', {
         activeCard(status){
             console.log(status)
             this.active = status;
+        },
+        getUrlPokemon(){
+            
         }
     }
 });
