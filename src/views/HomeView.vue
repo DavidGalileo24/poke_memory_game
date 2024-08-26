@@ -1,45 +1,21 @@
 <script setup>
 import { onMounted } from 'vue';
+import { usePokemonStore } from '../stores/pokemon';
+const pokeData = usePokemonStore();
 
-const firstArray = [
-  {
-    id: 1,
-    file: '../../public/images/1.png'
-  },
-  {
-    id: 2,
-    file: '../../public/images/2.png'
-  },
-  {
-    id: 3,
-    file: '../../public/images/3.png'
-  },
-  {
-    id: 4,
-    file: '../../public/images/4.png'
-  },
-  {
-    id: 5,
-    file: '../../public/images/5.png'
-  },
-  {
-    id: 6,
-    file: '../../public/images/6.png'
-  },
-  {
-    id: 7,
-    file: '../../public/images/7.png'
-  },
-  {
-    id: 8,
-    file: '../../public/images/8.png'
-  },
-]
+const secondArray = pokeData.firstArray.slice();
 
 </script>
 
 <template>
-    <div v-for="imag in firstArray" :key="imag.id" class="w-">
-      <img :src="imag.file" class="w-20 h-20" />
+  <div class="grid gap-3 mt-7 grid-cols-4 w-2/3 mx-auto">
+    <div v-for="imag in pokeData.firstArray.concat(secondArray)" :key="imag.id" class="border rounded-md p-5 hover:cursor-pointer card">
+      <img src="../../public/images/8.png" class="w-24 h-24 mx-auto" @click="pokeData.getImage(imag.id)" v-if="pokeData.statusCard==false"/>
+      <img :src="imag.file" class="w-24 h-24 mx-auto" v-else />
+      <!--<h3 class="text-center text-lg mt-2 font-semibold">{{ imag.name }}</h3>-->
     </div>
+  </div>
 </template>
+<style scoped>
+
+</style>
