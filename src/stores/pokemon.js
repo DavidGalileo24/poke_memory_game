@@ -8,38 +8,36 @@ export const usePokemonStore = defineStore("pokemon", {
     firstArray: [
       {
         id: 1,
-        name: "Hormiga",
         statusInCard: false,
         file: "../../public/images/1.png",
+        defaulImage: '../../public/images/8.png', 
       },
       {
         id: 2,
-        name: "Moneda",
         statusInCard: false,
         file: "../../public/images/2.png",
+        defaulImage: '../../public/images/8.png', 
       },
       {
         id: 3,
-        name: "Araña",
         statusInCard: false,
         file: "../../public/images/4.png",
+        defaulImage: '../../public/images/8.png', 
       },
       {
         id: 4,
-        name: "Duende",
         statusInCard: false,
         file: "../../public/images/6.png",
+        defaulImage: '../../public/images/8.png', 
       },
       /**
           {
             id: 5,
-            name: "Duende",
             statusInCard: false,
             file: '../../public/images/5.png',
           },
           {
             id: 6,
-            name: "Duende",
             statusInCard: false,
             file: '../../public/images/6.png',
           },
@@ -51,7 +49,6 @@ export const usePokemonStore = defineStore("pokemon", {
           },
           {
             id: 8,
-            name: "Duende",
             statusInCard: false,
             file: '../../public/images/8.png',
           }, */
@@ -67,10 +64,10 @@ export const usePokemonStore = defineStore("pokemon", {
         } */
     getImage(data) {
       console.log(data);
-      this.defaultImage = false;
+      data.defaultImage = false;
       data.statusInCard = true
       if(data.statusInCard == false) {
-        this.image = this.defaultImage;
+        this.image = data.defaultImage;
       } else { 
         this.image = data.file;
       }
