@@ -11,7 +11,7 @@ onMounted(() => {
 
 <template>
   <main class="p-2 w-5/6 mx-auto">
-    <h1 class="text-center text-4xl font-bold">Memory game</h1>
+    <h1 class="text-center text-4xl font-bold">Pokememorama</h1>
     <!--card-->
     <div class=" grid grid-cols-5 gap-2 mt-5">
       <div
